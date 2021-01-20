@@ -1,0 +1,24 @@
+@startuml
+
+participant DEV as "SpaceMouse"
+participant DRV as "spacenavd"
+participant SRV as "Python HTTP Service"
+participant WSS as "Python WS Service"
+participant ONH as "Onshape"
+
+ONH -> SRV : GET `https://127.51.68.120:8181/3dconnexion/nlproxy`
+SRV -> ONH : `{"port": 8080}`
+
+ONH -> WSS : Connect
+
+DEV -> DRV : Movement
+DRV -> WSS : Emit event
+WSS -> ONH : Emit event
+
+DEV -> DRV : Movement
+DRV -> WSS : Emit event
+WSS -> ONH : Emit event
+
+ONH -> WSS : Disconnect
+
+@enduml
