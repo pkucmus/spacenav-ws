@@ -1,0 +1,27 @@
+version: "3.6"
+
+networks:
+  spacenav: {}
+
+services:
+  nginx:
+    image: nginx:1.19.6
+    ports:
+      - "8181:433"
+    volumes:
+      - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./nginx/certs:/certs"
+    networks:
+      - spacenav
+
+  app:
+    build:
+      context: .
+    command: python src/spacenav_ws/main.py
+    volumes:
+      - "./src:/app/src"
+      - "/var/run/spnav.sock:/var/run/spnav.sock"
+    networks:
+      - spacenav
+    

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spacenav websocket expose</title>
+        <style>
+            pre {display: inline;}
+        </style>
+    </head>
+    <body>
+        <h1>Spacenav websocket expose</h1>
+        <div>button pressed: <pre id="button">none</pre></div>
+        <div>X: <pre id="X">null</pre></div>
+        <div>Z: <pre id="Z">null</pre></div>
+        <div>Y: <pre id="Y">null</pre></div>
+        <div>pitch: <pre id="pitch">null</pre></div>
+        <div>yaw: <pre id="yaw">null</pre></div>
+        <div>roll: <pre id="roll">null</pre></div>
+        <div>period: <pre id="period">null</pre></div>
+        <script>
+            var ws = new WebSocket("wss://127.51.68.120:8181/3dconnexion", ["wamp"]);
+            var X = document.getElementById('X');
+            var Z = document.getElementById('Z');
+            var Y = document.getElementById('Y');
+            var pitch = document.getElementById('pitch');
+            var yaw = document.getElementById('yaw');
+            var roll = document.getElementById('roll');
+            var period = document.getElementById('period');
+            var button = document.getElementById('button');
+            ws.onmessage = function(event) {
+                var data = JSON.parse(event.data);
+                console.log(data);
+                if (data.type === "mtn") {
+                    X.textContent = data.x;
+                    Z.textContent = data.z;
+                    Y.textContent = data.y;
+                    pitch.textContent = data.pitch;
+                    yaw.textContent = data.yaw;
+                    roll.textContent = data.roll;
+                    period.textContent = data.period;
+                } else if (data.type === "btn") {
+                    if (data.pressed === true) {
+                        button.textContent = data.button_id;
+                    } else {
+                        button.textContent = "none";
+                    }
+
+                }
+            };
+        </script>
+    </body>
+</html>

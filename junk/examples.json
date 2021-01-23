@@ -1,0 +1,97 @@
+[
+    8,
+    "3dconnexion:3dcontroller/3566065573492",
+    [
+        2,
+        "aE2rV4EG2FlRqqNe",
+        "self:update",
+        "",
+        "pivot.position",
+        [
+            0.07456100732088089,
+            -0.07402022927999496,
+            0.002915670396760106
+        ]
+    ]
+]
+[
+    8,
+    "3dconnexion:3dcontroller/3566065573492",
+    [
+        2,
+        "RZgVBZOdEh6NvGoV",
+        "self:update",
+        "",
+        "hit.direction",
+        [
+            0.477838134858372,
+            0.8582169891320971,
+            -0.1874415013813916
+        ]
+    ]
+]
+
+[
+    8,
+    "3dconnexion:3dcontroller/3566065573492",
+    [
+        2,
+        "kIyjlBMFUAXCBMnJ",
+        "self:update",
+        "",
+        "transaction",
+        0
+    ]
+]
+[
+    8,
+    "3dconnexion:3dcontroller/3566065573492",
+    [
+        2,
+        "vhj1WFOb1aGDXI7d",
+        "self:update",
+        "",
+        "view.affine",
+        [
+            0.9271885408792452,
+            -0.3671419119088283,
+            0.07435204221907192,
+            0,
+            0.08448485590856766,
+            0.3983266795284326,
+            0.9133444944258232,
+            0,
+            -0.3649434460081796,
+            -0.8405609275333846,
+            0.4003418643108554,
+            0,
+            0.08627579426964002,
+            -0.2486249618828344,
+            0.1137656502994606,
+            1
+        ]
+    ]
+]
+[
+    8,
+    "3dconnexion:3dcontroller/3566065573492",
+    [
+        2,
+        "lAIgFCK2NLfR5deN",
+        "self:read",
+        "",
+        "view.target"
+    ]
+]
+[
+    8,
+    "3dconnexion:3dcontroller/3566065573492",
+    [
+        2,
+        "14N0SDJ9ha0VeaDz",
+        "self:update",
+        "",
+        "transaction",
+        1397
+    ]
+]

@@ -8,6 +8,8 @@ authors = ["Paweł Kucmus <pkucmus@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.63.0"
 uvicorn = {extras = ["standard"], version = "^0.13.3"}
+autobahn = {extras = ["encryption", "serialization", "twisted"], version = "^20.12.3"}
+Jinja2 = "^2.11.2"
 
 [tool.poetry.dev-dependencies]
 

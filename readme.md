@@ -10,22 +10,18 @@ https://github.com/FreeSpacenav/spacenavd/issues/30
 
 ### Install deps
 
-With PIP, or Poetry
+Docker and Docker Compose
 
-```
-pip install -r requirements.txt
-```
+### Self-signed certificates
 
-or
-
-```
-poetry install
-```
+You can import the nginx/certs/nginx-selfsigned.crt as a trusted cert or use your own - just replace the crt and key in nginx/certs.
 
 ### Run
 
 ```
-uvicorn main:app --host 0.0.0.0 --port 8181 --reload
+docker-compose up
 ```
 
-open http://127.0.0.1:8181 and toggle your SpaceMouse.
+open https://127.51.68.120:8181/test and toggle your SpaceMouse.
+
+The example https://3dconnexion.com/technical_support/web_threejs.html will also connect but will not move the piramid (since the WS payloads need to be figured out).
